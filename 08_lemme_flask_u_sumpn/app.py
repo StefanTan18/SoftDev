@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "<h1>Welcome to my page!</h1> <br> <a href='/more'>Want more?</a> <br> <a href='/bye'>Want to leave?</a>"
+    return "<h1>Welcome to my page!</h1> <h2>Choose one:</h2> <br> <a href='/more'>Want more?</a> <br> <a href='/bye'>Want to leave?</a>"
 
 @app.route("/more")
 def more():
