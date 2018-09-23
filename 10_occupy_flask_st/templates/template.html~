@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> {{foo}} </title> <!--#jinja-->
+    <style>
+      table, th, td {
+      border: 1px solid black;
+      }
+    </style>
+    <h1> {{foo}} </h1>
+  </head>
+  <body>
+    <table style="width:100%">
+      <tr>
+	<th>Job Class</th>
+	<th>Percentage</th>
+      </tr>
+      {% for item in collection %}
+      <tr>
+	<td>{{item}}</td>
+	<td>{{collection[item]}}</td>
+      </tr>
+      {% endfor %}
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!--
+Team Track -- Addison Huang and Stefan Tan
+SoftDev1 pd6
+K10 -- Jinja Tuning
+2018-09-21
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> {{foo}} </title> <!--#jinja-->
+    <style>
+      table, th, td {
+      border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1> {{foo}} </h1>
+    <h2>The randomly selected occupation is... {{boo}}</h2>
+    <table style="width:100%">
+      <tr>
+	<th>Job Class</th>
+	<th>Percentage</th>
+      </tr>
+      {% for item in collection %}
+      <tr>
+	<td>{{item}}</td>
+	<td>{{collection[item]}}</td>
+      </tr>
+      {% endfor %}
+  </body>
+</html>
