@@ -22,7 +22,9 @@ def selectRandOccupation(dic):
     percentages = list(dic.values()) #makes a list of all the occuaption
     result = random.choices(occupations, percentages)
     #returns a list of size 1 with a random occupation choosen based on the percentages
+    print(occupations)
+    print(percentages)
     return result.pop() #returns the only element in the list
-    
+
+
 print('The random occupation selected is... ' + selectRandOccupation(d))
-    

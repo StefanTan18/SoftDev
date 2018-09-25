@@ -6,6 +6,7 @@ K10 -- Jinja Tuning
 '''
 
 from flask import Flask, render_template
+from util import ants
 import csv, random
 
 app=Flask(__name__)
@@ -17,19 +18,9 @@ def link():
 
 @app.route("/occupations")
 def occupations():
-    reader = csv.reader(open('occupations.csv')) #opens and reads the csv file
-    next(reader) # skips the headers
-    d={} #intialized the dictionary
-    for row in reader: #iterates through the csv file and updates the dictionary accordingly
-        d[row[0]]=float(row[1])
-    d.pop('Total') # gets rid of the last row
-    occupations = list(d.keys()) #makes a list of all the occupations
-    percentages = list(d.values()) #makes a list of all the occuaption
-    result = random.choices(occupations, percentages)
-    #returns a list of size 1 with a random occupation choosen based on the percentages
     return render_template("template.html",
-                           boo = result.pop(),
-                       foo="Occupations in the United States", #the title will be "Occupations in the United States"
+                           randomOcc = ants.randomizer(ants.occReader()),
+                       title ="Occupations in the United States", #the title will be "Occupations in the United States"
                        collection=d #d replaces collection in the html
 )
 
