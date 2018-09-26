@@ -13,6 +13,7 @@ def occReader():
     d={} #intialized the dictionary
     for row in reader: #iterates through the csv file and updates the dictionary accordingly
         d[row[0]]=float(row[1])
+    d.pop("Total")
     return d
 
 def randomizer(dic):    

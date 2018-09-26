@@ -21,7 +21,7 @@ def occupations():
     return render_template("template.html",
                            randomOcc = ants.randomizer(ants.occReader()),
                        title ="Occupations in the United States", #the title will be "Occupations in the United States"
-                       collection=d #d replaces collection in the html
+                       collection = ants.occReader() #replaces collection in the html
 )
 
 if __name__ == "__main__":
