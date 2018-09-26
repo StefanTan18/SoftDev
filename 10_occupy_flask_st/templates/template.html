@@ -1,13 +1,13 @@
 <!--
-Team Track -- Addison Huang and Stefan Tan
-SoftDev1 pd6
-K10 -- Jinja Tuning
-2018-09-21
--->
+    Team Track -- Addison Huang and Stefan Tan
+    SoftDev1 pd6
+    K10 -- Jinja Tuning
+    2018-09-21
+  -->
 <!DOCTYPE html>
 <html>
   <head>
-    <title> {{title}} </title> <!--#jinja-->
+    <title> {{title}} </title> <!--#jinja--> <!-- the title of the page -->
     <style>
       table, th, td {
       border: 1px solid black;
@@ -15,14 +15,14 @@ K10 -- Jinja Tuning
     </style>
   </head>
   <body>
-    <h1> {{title}} </h1>
-    <h2>The randomly selected occupation is... {{randomOcc}}</h2>
+    <h1> {{title}} </h1> <!-- the title of the page -->
+    <h2>The randomly selected occupation is... {{randomOcc}}</h2> <!-- random occupation-->
     <table style="width:100%">
       <tr>
 	<th>Job Class</th>
 	<th>Percentage</th>
       </tr>
-      {% for item in collection %}
+      {% for item in collection %} <!-- for loop to print out the job class and percentage -->
       <tr>
 	<td>{{item}}</td>
 	<td>{{collection[item]}}</td>
