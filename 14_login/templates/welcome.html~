@@ -1,0 +1,21 @@
+<!--
+Stefan Tan
+SoftDev1 pd6
+K13 -- Echo Echo Echo
+2018-09-27
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Welcome</title>
+  </head>
+  <body>
+    <form action="/auth">
+      Username:<br>
+      <input type="text" name="username">
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>
+
