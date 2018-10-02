@@ -1,0 +1,39 @@
+<!--
+Frozen Cookies - T. Fabiha && Stefan Tan
+SoftDev1 pd6
+K14 -- Do I Know You?
+2018-10-01
+-->
+
+<!Doctype html>
+<html>
+  <head>
+  </head>
+
+  <body>
+
+    {% if logged %}
+    <p>Hello there! Welcome {{name}}!</p>
+    <form action="/logout">
+      <input type = "submit" value = "Logout">
+    </form>
+
+    {% else %}
+
+    {# <p> {{error}} </p> #}
+    {% set msgs = get_flashed_messags() %}
+    {% for each in msgs %}
+    {{each}}
+    <br>
+    {% endfor %}
+
+    <form action="/auth">
+      <p> Username: <input type = "text" name = "username"> </p>
+      <p> Password: <input type = "text" name = "password"> </p>
+      <input type = "submit" value = "Submit">
+    </form>
+    {% endif %}
+
+  </body>
+</html>
+
