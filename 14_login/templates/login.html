@@ -5,17 +5,30 @@ K14 -- Do I Know You?
 2018-10-01
 -->
 
-<!DOCTYPE html>
+<!Doctype html>
 <html>
   <head>
-    <title>Login</title>
   </head>
+
   <body>
-    <form action="/login" method="POST">
-      <input type="username" name="username" placeholder="Username">
-      <input type="password" name="password" placeholder="Password">
-      <input type="submit" value="Log in">
+
+    {% if logged %}
+    <p>Hello there! Welcome {{name}}!</p>
+    <form action="/logout">
+      <input type = "submit" value = "Logout">
     </form>
+
+    {% else %}
+
+    <p> {{error}} </p>
+
+    <form action="/auth">
+      <p> Username: <input type = "text" name = "username"> </p>
+      <p> Password: <input type = "text" name = "password"> </p>
+      <input type = "submit" value = "Submit">
+    </form>
+    {% endif %}
+
   </body>
 </html>
 

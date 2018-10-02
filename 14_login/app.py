@@ -5,39 +5,58 @@ K14 -- Do I Know You?
 2018-10-01
 '''
 
-from flask import Flask, render_template, request, session, url_for, redirect
-import os 
+from flask import Flask, render_template, request, redirect, url_for, session
+import os
 
-app= Flask(__name__) #create instance of class Flask
+app = Flask(__name__)
 
-username = "Bob"
-passwd = "bobby"
+# hardcopy of the user data
+user = "bob"
+pswd = "bobby"
 
 @app.route("/")
-def hello_world():
-    if session.get("username") == "Bob":
-        return render_template("auth.html", username = session.get("username"))
-    else:
-        return render_template("login.html")
+def home():
+	login = session.get("username") == user and session.get("password") == pswd # checks to see if user is logged in correctly
+	mistake = "" # will hold the mistake messages
+	#print(login)
 
-@app.route("/login", methods=["POST"])
-def login():
-    if request.form["username"] == username:
-        if request.form["password"] == passwd:
-            session["username"] = "Bob"
-            return render_template("auth.html", username = session.get("username"))
-        else:
-            return render_template("error.html", message = "Wrong Password. Please try again.")
-    else:
-        return render_template("error.html", message = "Wrong Username. Please try again.")
+	# sees if there needs to be mistake messages added to the site
+	# if user is not logged in but has attemped to log in then there's something wrong
+	if not login and session.get("attempted"):
+
+		# if the username is incorrect
+		if not (session.get("username") == user):
+			mistake += "Username is incorrect. "
+
+		# if the password is incorrect
+		if not (session.get("password") == pswd):
+			mistake += "Password is incorrect."
+
+	#print("Session's value of logged: ")
+	#print(session.get("logged"))
+
+	return render_template("login.html",
+							logged = login,
+							error = mistake,
+							name = session.get("username")) # name of user
+
+@app.route("/auth")
+def authorization():
+	session["username"] = request.args["username"] # stores username
+	session["password"] = request.args["password"] # stores password
+	session["attempted"] = True # has the user attempted to log in
+	return redirect(url_for("home"))
 
 @app.route("/logout")
 def logout():
-    session.pop("username")
-    return redirect(url_for("hello_world"))
+	# removes stored data
+	session.pop("username")
+	session.pop("password")
+	session.pop("attempted")
+	
+	return redirect(url_for("home"))
 
 if __name__ == "__main__":
-    app.secret_key = os.urandom(32)
-    app.debug = True
-    app.run()
-    
+	app.secret_key = os.urandom(32)
+	app.debug = True
+app.run()
