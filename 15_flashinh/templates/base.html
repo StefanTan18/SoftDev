@@ -8,16 +8,22 @@ K15 -- Oh yes, perhaps I do…
 <!DOCTYPE html>
 <html>
   <head>
+
     {% block head %}
-     <title> {% block title %}{% endblock %}
-      -|- My Foist Webpage 
-     </title>
+    <title> {% block title %}{% endblock %}
+      -|- My Foist Webpage
+    </title>
     {% endblock %}
+
   </head>
+
   <body>
     {% block content %}{% endblock %}
+
     {% block footer %}
+    <br>
     &copy; Copyright Frozen Cookies 2018
     {% endblock %}
+
   </body>
 </html>

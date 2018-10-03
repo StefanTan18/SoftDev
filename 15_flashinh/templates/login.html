@@ -6,9 +6,11 @@ K15 -- Oh yes, perhaps I do…
 -->
 
 {% extends "base.html" %}
+
 {% block head %}
-<title> Login </title>
+    <title> Home </title>
 {% endblock %}
+
 {% block content %}
 
     {% if logged %}
@@ -19,13 +21,16 @@ K15 -- Oh yes, perhaps I do…
 
     {% else %}
 
+    <!-- Prints errors if any exist. -->
     {# <p> {{error}} </p> #}
     {% set msgs = get_flashed_messages() %}
+
     {% for each in msgs %}
-    {{each}}
-    <br>
+      {{each}}
+      <br>
     {% endfor %}
-    
+
+    <!-- Asks for username and password for login. -->
     <form action="/auth">
       <p>Please enter your username and password below:</p>
       <p> Username: <input type = "text" name = "username"> </p>
@@ -33,6 +38,6 @@ K15 -- Oh yes, perhaps I do…
       <input type = "submit" value = "Submit">
     </form>
     {% endif %}
-    
+
 {% endblock %}
 
