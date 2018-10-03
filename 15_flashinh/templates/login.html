@@ -21,7 +21,7 @@ K14 -- Do I Know You?
     {% else %}
 
     {# <p> {{error}} </p> #}
-    {% set msgs = get_flashed_messags() %}
+    {% set msgs = get_flashed_messages() %}
     {% for each in msgs %}
     {{each}}
     <br>
@@ -33,6 +33,10 @@ K14 -- Do I Know You?
       <input type = "submit" value = "Submit">
     </form>
     {% endif %}
+
+    {% block footer %}
+	&copy; Copyright Frozen Cookies 2018
+	{% endblock %}
 
   </body>
 </html>

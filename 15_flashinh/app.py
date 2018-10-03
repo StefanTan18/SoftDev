@@ -30,32 +30,32 @@ def home():
             flash("Username is incorrect.")
     
             # if the password is incorrect
-            if not (session.get("password") == pswd):
-                #mistake += "Password is incorrect."
-                flash("Password is incorrect.")
+        if not (session.get("password") == pswd):
+            #mistake += "Password is incorrect."
+            flash("Password is incorrect.")
 
-                #print("Session's value of logged: ")
-                #print(session.get("logged"))
+    #print("Session's value of logged: ")
+    #print(session.get("logged"))
             
-                return render_template("login.html", logged = login, name = session.get("username")) # name of user
+    return render_template("login.html", logged = login, name = session.get("username")) # name of user
     
-            @app.route("/auth")
-            def authorization():
-                session["username"] = request.args["username"] # stores username
-                session["password"] = request.args["password"] # stores password
-                session["attempted"] = True # has the user attempted to log in
-                return redirect(url_for("home"))
+@app.route("/auth")
+def authorization():
+    session["username"] = request.args["username"] # stores username
+    session["password"] = request.args["password"] # stores password
+    session["attempted"] = True # has the user attempted to log in
+    return redirect(url_for("home"))
 
-            @app.route("/logout")
-            def logout():
-                # removes stored data
-                session.pop("username")
-                session.pop("password")
-                session.pop("attempted")
+@app.route("/logout")
+def logout():
+    # removes stored data
+    session.pop("username")
+    session.pop("password")
+    session.pop("attempted")
     
-                return redirect(url_for("home"))
-                                           
-            if __name__ == "__main__":
-                app.secret_key = os.urandom(32)
-                app.debug = True
-                app.run()
+    return redirect(url_for("home"))
+
+if __name__ == "__main__":
+    app.secret_key = os.urandom(32)
+    app.debug = True
+    app.run()
