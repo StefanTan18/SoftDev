@@ -1,16 +1,15 @@
 <!--
 Frozen Cookies - T. Fabiha && Stefan Tan
 SoftDev1 pd6
-K14 -- Do I Know You?
-2018-10-01
+K15 -- Oh yes, perhaps I do… 
+2018-10-02
 -->
 
-<!Doctype html>
-<html>
-  <head>
-  </head>
-
-  <body>
+{% extends "base.html" %}
+{% block head %}
+<title> Login </title>
+{% endblock %}
+{% block content %}
 
     {% if logged %}
     <p>Hello there! Welcome {{name}}!</p>
@@ -26,18 +25,14 @@ K14 -- Do I Know You?
     {{each}}
     <br>
     {% endfor %}
-
+    
     <form action="/auth">
+      <p>Please enter your username and password below:</p>
       <p> Username: <input type = "text" name = "username"> </p>
       <p> Password: <input type = "text" name = "password"> </p>
       <input type = "submit" value = "Submit">
     </form>
     {% endif %}
-
-    {% block footer %}
-	&copy; Copyright Frozen Cookies 2018
-	{% endblock %}
-
-  </body>
-</html>
+    
+{% endblock %}
 
