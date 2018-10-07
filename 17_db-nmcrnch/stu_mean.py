@@ -1,11 +1,10 @@
-#Team Dhata: Xiaojie(Aaron) Li, Stefan Tan
+#Team Sum over Num_Elements: Xiaojie(Aaron) Li, Stefan Tan
 #SoftDev1 pd6
 #K17 -- Average
 #2018-10-05
 
 import sqlite3   #enable control of an sqlite database
 import csv       #facilitates CSV I/O
-
 
 DB_FILE="discobandit.db"
 
@@ -23,7 +22,7 @@ CREATE TABLE students(
 c.execute(command)    #run SQL statement
 num_peeps = 0
 # populate sql table for peeps.csv
-with open("data/peeps.csv") as csvfile:
+with open("peeps.csv") as csvfile:
     reader = csv.DictReader(csvfile)
 
     for row in reader:
@@ -41,7 +40,7 @@ CREATE TABLE courses(
 c.execute(command)    #run SQL statement
 
 # populate sql table for courses.csv
-with open("data/courses.csv") as csvfile:
+with open("courses.csv") as csvfile:
     reader = csv.DictReader(csvfile)
 
     for row in reader:
@@ -50,7 +49,7 @@ with open("data/courses.csv") as csvfile:
 
 # create average table
 command = """
-CREATE TABLE peeps_avg(
+CREATE TABLE averages(
     name TEXT,
     id INTEGER,
     average REAL)
@@ -78,8 +77,8 @@ for i in range(len(avg)):
         current = avg[i][0]
         sum = float(avg[i][2])
         count = 1
-#==========================================================
-# function to add rows to courses table
+        #==========================================================
+        # function to add rows to courses table
 def add(code, mark, id):
     commands = (code, mark, id)
     c.execute("INSERT INTO courses VALUES(?, ?, ?)", commands)
