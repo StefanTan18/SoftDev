@@ -22,7 +22,7 @@ CREATE TABLE students(
 c.execute(command)    #run SQL statement
 num_peeps = 0
 # populate sql table for peeps.csv
-with open("peeps.csv") as csvfile:
+with open("data/peeps.csv") as csvfile:
     reader = csv.DictReader(csvfile)
 
     for row in reader:
@@ -40,7 +40,7 @@ CREATE TABLE courses(
 c.execute(command)    #run SQL statement
 
 # populate sql table for courses.csv
-with open("courses.csv") as csvfile:
+with open("data/courses.csv") as csvfile:
     reader = csv.DictReader(csvfile)
 
     for row in reader:
@@ -49,7 +49,8 @@ with open("courses.csv") as csvfile:
 
 # create average table
 command = """
-CREATE TABLE averages(
+CREATE TABLE peeps_avg(
+    counter INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT,
     id INTEGER,
     average REAL)
@@ -67,18 +68,24 @@ current = avg[0][0] # current student
 sum = 0 # sum thus far
 count = 0 # count
 for i in range(len(avg)):
+    # print(avg[i][0])
     if avg[i][0] == current:
         sum += float(avg[i][2])
         count += 1
     else:
-        # print(str(sum/count) + " " + avg[i - 1][0])
-        command = (avg[i - 1][0], avg[i - 1][1], avg[i - 1][2])
-        c.execute("INSERT INTO averages VALUES(?, ?, ?)", command)
+        print(str(sum/count) + " " + avg[i - 1][0])
+        command = (avg[i - 1][0], avg[i - 1][1], sum/count)
+        c.execute("INSERT INTO peeps_avg(name, id, average) VALUES(?, ?, ?)", command)
         current = avg[i][0]
+        # print("current: " + current)
         sum = float(avg[i][2])
         count = 1
-        #==========================================================
-        # function to add rows to courses table
+# print and add last student value
+print(str(sum/count) + " " + avg[i - 1][0])
+command = (avg[i - 1][0], avg[i - 1][1], sum/count)
+c.execute("INSERT INTO peeps_avg(name, id, average) VALUES(?, ?, ?)", command)
+#==========================================================
+# function to add rows to courses table
 def add(code, mark, id):
     commands = (code, mark, id)
     c.execute("INSERT INTO courses VALUES(?, ?, ?)", commands)
