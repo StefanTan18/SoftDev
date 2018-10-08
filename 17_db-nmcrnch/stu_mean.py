@@ -73,8 +73,8 @@ for i in range(len(avg)):
         sum += float(avg[i][2])
         count += 1
     else:
-        print(str(sum/count) + " " + avg[i - 1][0])
-        command = (avg[i - 1][0], avg[i - 1][1], sum/count)
+        print(str(round((sum / count), 2)) + " " + avg[i - 1][0])
+        command = (avg[i - 1][0], avg[i - 1][1], round((sum / count), 2))
         c.execute("INSERT INTO peeps_avg(name, id, average) VALUES(?, ?, ?)", command)
         current = avg[i][0]
         # print("current: " + current)
@@ -82,7 +82,7 @@ for i in range(len(avg)):
         count = 1
 # print and add last student value
 print(str(sum/count) + " " + avg[i - 1][0])
-command = (avg[i - 1][0], avg[i - 1][1], sum/count)
+command = (avg[i - 1][0], avg[i - 1][1], round((sum / count), 2))
 c.execute("INSERT INTO peeps_avg(name, id, average) VALUES(?, ?, ?)", command)
 #==========================================================
 # function to add rows to courses table
