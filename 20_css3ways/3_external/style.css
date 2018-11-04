@@ -1,0 +1,57 @@
+/*
+Team Sheet Makers -- Angela Tom & Stefan Tan
+SoftDev1 pd6
+K20 -- Comic Sans Syndrome
+2018-11-02
+*/
+
+body{
+    background-color: dimgray; 
+    font-family: Arial;
+}
+
+.container{
+    background-color: gray;
+}
+
+.container h1{
+    margin: 0%;
+    background-color: lightgray; 
+    color: white;
+    text-align: center; 
+    padding: 0.5%;
+}
+
+#nav{
+    float: left; 
+    padding-left: 1%;
+    font-weight: bold;
+}
+
+#nav h3{
+    margin: 0%;
+    padding-top: 15%;
+}
+
+#nav ul{
+    list-style-type: none;
+    padding-left: 0%;
+}
+
+a{
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+#content{
+    margin-left: 17%;
+    padding-right: 1%;
+}
+
+#footer{
+    display: block;
+    color: gray; 
+    background-color: #505050; 
+    text-align: right; 
+    padding: 1%;
+}

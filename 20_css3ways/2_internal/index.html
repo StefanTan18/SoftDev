@@ -1,27 +1,89 @@
+<!-- 
+Team Sheet Makers -- Angela Tom & Stefan Tan
+SoftDev1 pd6
+K20 -- Comic Sans Syndrome
+2018-11-02
+-->
+
 <!DOCTYPE html>
 <!-- WORK FILE for CSS --> 
 
 <html>
   <head>
+    <style>
+      body{
+      background-color: dimgray; 
+      font-family: Arial;
+      }
+      .container{
+      background-color: gray;
+      }
+      .container h1{
+      margin: 0%;
+      background-color: lightgray; 
+      color: white;
+      text-align: center; 
+      padding: 0.5%;
+      }
+      #nav{
+      float: left; 
+      padding-left: 1%;
+      font-weight: bold;
+      }
+      #nav h3{
+      margin: 0%;
+      padding-top: 15%;
+      }
+      #nav ul{
+      list-style-type: none;
+      padding-left: 0%;
+      }
+      a{
+      color: whitesmoke;
+      text-decoration: none;
+      }
+      #content{
+      margin-left: 17%;
+      padding-right: 1%;
+      }
+      #footer{
+      display: block;
+      color: gray; 
+      background-color: #505050; 
+      text-align: right; 
+      padding: 1%;
+      }  
+    </style>
     <title>foo title</title>
   </head>
 
   <body>
-    <h1>foo heading 1</h1>
-    <h3>nav foo</h3>
-    <ul>
-      <li><a href="">dis</a></li>
-      <li><a href="">dat</a></li>
-      <li><a href="">de udda ting</a></li>
-    </ul>
-    <h2>main foo heading</h2>
-    <p>tk tk tk tk tk tk tk tk tk tk tk tk tk tk tk tk tk tk tk tk 
-
-      <br>
-      <br>
-
-      Copyright &copy; 2016 Clyde "Thluffy" Sinclair
-
+    <div class="container">
+      <h1>foo heading 1</h1>
+      <div id="nav">
+	<h3>nav foo</h3>
+	<ul>
+	  <li><a href="">dis</a></li>
+	  <li><a href="">dat</a></li>
+	  <li><a href="">de udda ting</a></li>
+	</ul>
+      </div>
+      <div id="content">
+	<h2>main foo heading</h2>
+	<p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.
+          <br>
+          <br>
+          Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.
+          <br>
+          <br>
+          Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi amaranth water spinach avocado daikon napa cabbage asparagus winter purslane kale. Celery potato scallion desert raisin horseradish spinach carrot soko. Lotus root water spinach fennel kombu maize bamboo shoot green bean swiss chard seakale pumpkin onion chickpea gram corn pea. Brussels sprout coriander water chestnut gourd swiss chard wakame kohlrabi beetroot carrot watercress. Corn amaranth salsify bunya nuts nori azuki bean chickweed potato bell pepper artichoke. 
+	</p>
+      </div>
+      <div id="footer">
+	Copyright &copy; 2016 Clyde "Thluffy" Sinclair
+	
+      </div>
+    </div>
   </body>
 
 </html>
