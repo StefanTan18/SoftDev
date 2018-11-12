@@ -1,0 +1,200 @@
+<!-- 
+Team Sheet Makers -- Angela Tom and Stefan Tan
+SoftDev1 pd6
+K23 -- How the Other Half Lives
+2018-11-09
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.0/dist/css/foundation.min.css">
+    <title>Foundation Features</title>
+  </head>
+  <body>
+    <div class="grid-container">
+      <h1>Foundation Features</h1>
+      <div class="top-bar">
+	<div class="top-bar-left">
+	  <ul class="menu">
+	    <li class="menu-text">Nav Bar</li>
+	    <li><a href="#">One</a></li>
+	    <li><a href="#">Two</a></li>
+	    <li><a href="#">Three</a></li>
+	  </ul>
+	</div>
+	<div class="top-bar-right">
+	  <ul class="menu">
+	    <li><input type="search" placeholder="Search"></li>
+	    <li><button type="button" class="button">Search</button></li>
+	  </ul>
+	</div>
+      </div>
+      <br>
+      <h1>Grid System</h1>
+      <p>Starting from full screen, try resizing the window so that it gets smaller and smaller. You will notice that the two paragraphs will shift from a 1:1 ratio to a 2:1 ratio to a 1:2 ratio. The left cell is 6/9/3 and the right cell is 6/3/9. The first number in both denotes the columns that each cell takes up out of 12 since 12 columns is the default and most optimal. So the left cell takes 6/12 and the right cell takes 6/12 when the window is large. The second number denotes what they do when the window is medium sized and the third number denotes what they do when the window is small sized.</p>
+      <div class="grid-x">
+	<div class="cell small-6">
+	  <p>Cow paneer gouda. Squirty cheese cheese triangles fromage frais cheesy feet mozzarella airedale swiss cheesy grin. Cheesy grin caerphilly paneer edam squirty cheese manchego fromage frais roquefort. Swiss paneer blue castello say cheese camembert de normandie brie brie cheese on toast. Mozzarella.</p>
+	</div>
+	<div class="cell small-6">
+	  <p>Bavarian bergkase cheese triangles danish fontina. Ricotta cauliflower cheese squirty cheese cheesy feet parmesan halloumi jarlsberg paneer. Paneer goat cheeseburger squirty cheese feta cheese slices mascarpone cheese triangles. Everyone loves camembert de normandie cheese and wine pepper jack boursin cheesecake cheese slices manchego. Fromage chalk and cheese.</p>
+	</div>
+      </div>
+      <h1>Buttons</h1>
+      <h3>Coloring</h3>
+      <h5>Options: primary, secondary, success, alert, warning</h5>
+      <p>Changes the button's color based on the class of button that is specified. </p>
+      <button type="button" class="button primary">Primary</button>
+      <button type="button" class="button secondary">Secondary</button>            
+      <button type="button" class="button success">Success</button>
+      <button type="button" class="button alert">Alert</button>
+      <button type="button" class="button warning">Warning</button>
+      <h1>Sizing</h1>
+      <h5>Options: tiny, small, large, expanded</h5>
+      <p>Changes the button's size based on the class of button that is specified.</p>
+      <button type="button" class="button tiny">Tiny</button>
+      <button type="button" class="button small">Small</button>            
+      <button type="button" class="button">Original</button>
+      <button type="button" class="button large">Large</button>
+      <button type="button" class="button expanded">Expanded</button>
+      <h1>Others</h1>
+      <h5>Options: hollow, clear</h5>
+      <p>
+        Hollow creates a button without a background but with a border.
+        Clear creates a button without a background nor a border.
+        Disabled creates a button that looks like it is disabled; the disabled class must be added to actually disable it.
+      </p>
+      <button type="button" class="button hollow">Hollow</button>
+      <button type="button" class="button clear">Clear</button>
+      <button type="button" class="button disabled">Disabled</button>
+      <br>
+      Any combination of these classes can also be created:
+      <button type="button" class="button large expanded alert hollow disabled">Large Expanded Alert Hollow Disabled Button</button>
+      <h1>Callouts</h1>
+      <p>Callouts are a type of container that creates a box and has styling features. They also have the color and sizing options that can be found with buttons except tiny, expanded, hollow and clear. </p>
+      <div class="callout">
+	<h1>Heading</h1>
+	<p>hello world</p>
+	<a href="#">Link</a>
+      </div>
+      <div class="callout primary">
+        <p>Primary Callout</p>
+      </div>
+      <div class="callout secondary">
+        <p>Secondary Callout</p>
+      </div>
+      <div class="callout success">
+        <p>Success Callout</p>
+      </div>
+      <div class="callout alert">
+        <p>Alert Callout</p>
+      </div>
+      <div class="callout warning">
+        <p>Warning Callout</p>
+      </div>
+      <div class="callout small">
+        <p>Small Callout</p>
+      </div>
+      <div class="callout large">
+        <p>Large Callout</p>
+      </div>
+
+      <h1>Tables</h1>
+      <p>This is how the default table looks like.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Birthday</th>
+            <th>Height</th>
+            <th>Favorite Color</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Alpha</td>
+            <td>March 21, 2001</td>
+            <td>5'4"</td>
+            <td>Red</td>
+          </tr>
+          <tr>
+            <td>Beta</td>
+            <td>October 9, 2000</td>
+            <td>5'7"</td>
+            <td>Blue</td>
+          </tr>
+          <tr>
+            <td>Gamma</td>
+            <td>June 12, 2001</td>
+            <td>5'4"</td>
+            <td>Blue</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>This is a table with the class unstriped. The stripe pattern is removed from the table. </p>
+      <table class="unstriped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Birthday</th>
+            <th>Height</th>
+            <th>Favorite Color</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Alpha</td>
+            <td>March 21, 2001</td>
+            <td>5'4"</td>
+            <td>Red</td>
+          </tr>
+          <tr>
+            <td>Beta</td>
+            <td>October 9, 2000</td>
+            <td>5'7"</td>
+            <td>Blue</td>
+          </tr>
+          <tr>
+            <td>Gamma</td>
+            <td>June 12, 2001</td>
+            <td>5'4"</td>
+            <td>Blue</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>This is a table with the class hover. When the cursor hovers over a row, it is lightly darkened.</p>
+      <table class="hover">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Birthday</th>
+            <th>Height</th>
+            <th>Favorite Color</th>
+          </tr>
+        </thead>
+      </table>
+
+      <p>You can have embed contents in your website by wrapping your element with class "responsive-embed".</p>
+      <div class="responsive-embed">
+	<iframe width="300" height="200" src="https://www.youtube.com/embed/astISOttCQ0" frameborder="0" allowfullscreen></iframe>
+      </div>      
+      <p>Pagination is a way for users to click through page of search results. This function can be seen on Google or any search engine.</p>
+      <nav aria-label="Pagination">
+	<ul class="pagination text-center">
+	  <li class="pagination-previous disabled">Previous</li>
+	  <li class="current"><span class="show-for-sr">You're on page</span> 1</li>
+	  <li><a href="#" aria-label="Page 2">2</a></li>
+	  <li><a href="#" aria-label="Page 3">3</a></li>
+	  <li><a href="#" aria-label="Page 4">4</a></li>
+	  <li class="ellipsis"></li>
+	  <li><a href="#" aria-label="Page 12">12</a></li>
+	  <li><a href="#" aria-label="Page 13">13</a></li>
+	  <li class="pagination-next"><a href="#" aria-label="Next page">Next</a></li>
+	</ul>
+      </nav>
+    </div>
+  </body>
+</html>
