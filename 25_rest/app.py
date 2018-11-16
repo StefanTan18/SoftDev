@@ -1,8 +1,8 @@
 '''
 Stefan Tan
 SoftDev1 pd6
-K24 -- A RESTful Journey Skyward
-2018-11-13
+K25 --Getting More REST
+2018-11-14
 '''
 
 from flask import Flask, render_template
