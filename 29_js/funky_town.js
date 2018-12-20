@@ -3,14 +3,14 @@
 //K28 -- Sequential Progression
 //2018-12-18
 
-var fibonnaci = function(n) {
+var fibonacci = function(n) {
     if (n == 0){
 	return 0;
     }
     if (n == 1){
 	return 1;
     }
-    return (fibonnaci(n - 1) + fibonnaci(n - 2));
+    return (fibonacci(n - 1) + fibonacci(n - 2));
 };
 
 var gcd = function(a, b){
@@ -30,10 +30,34 @@ var randomStudent = function() {
     return students[rand];
 };
 
+var ans = document.getElementById("ans");
+
 var fibbut = document.getElementById("a");
 
 var fib7 = function() {
-    fibonnaci(7);
+    var result = fibonacci(7);
+    console.log(result);
+    ans.innerHTML = result;
 };
 
-console.log(fibbut.addEventListener('click', fib7));
+var gcdbut = document.getElementById("b");
+
+var gcd32_24 = function() {
+    var result = gcd(32, 24);
+    console.log(result);
+    ans.innerHTML = result;
+};
+
+var rsbut = document.getElementById("c");
+
+var randstud = function() {
+    var result = randomStudent();
+    console.log(result);
+    ans.innerHTML = result;
+};
+
+fibbut.addEventListener('click', fib7);
+gcdbut.addEventListener('click', gcd32_24);
+rsbut.addEventListener('click', randstud);
+
+
