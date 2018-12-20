@@ -1,7 +1,7 @@
-//Team Gooble - Max Millar and Stefan Tan
+//Team Leaten - Emily Lee and Stefan Tan
 //SoftDev1 pd06
-//K28 -- Sequential Progression
-//2018-12-18
+//K29 -- Sequential Progression II: Electric Boogaloo
+//2018-12-19
 
 var fibonacci = function(n) {
     if (n == 0){
