@@ -1,4 +1,4 @@
-//Team Leaten - Emily Lee and Stefan Tan
+//Team Neatle - Emily Lee and Stefan Tan
 //SoftDev1 pd06
 //K29 -- Sequential Progression II: Electric Boogaloo
 //2018-12-19
@@ -13,14 +13,10 @@ var fibonacci = function(n) {
     return (fibonacci(n - 1) + fibonacci(n - 2));
 };
 
-var gcd = function(a, b){
-    if (b == 0){
-	return a;
-    }
-    temp = a
-    a = b
-    b = temp % b
-    return gcd(a, b);
+var gcd = function(a,b){
+    if(a == 0)
+	return b;
+    return gcd(b%a,a);
 };
 
 var students = ["Bob", "Steve", "Kevin", "Tim", "Wally", "Tom", "Jane"];
